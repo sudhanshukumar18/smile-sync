@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A user who joined the waitlist.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number of the user."
+        },
+        "clinicName": {
+          "type": "string",
+          "description": "Name of the clinic."
+        },
+        "createdAt": {
+          "type": "timestamp"
+        }
+      },
+      "required": ["name", "email", "phone", "clinicName", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": {
+        "$ref": "#/entities/Lead"
+      },
+      "description": "Waitlist leads collection."
+    }
+  }
+}
