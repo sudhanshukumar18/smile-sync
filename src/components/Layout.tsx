@@ -35,7 +35,7 @@ export const Navbar = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
                 Smile Sync
               </span>
               <span className="text-[9px] md:text-[10px] font-semibold text-brand-muted uppercase tracking-widest leading-none mt-1 ml-[1px]">
-                by Aeons Lab
+                by Smile Sync
               </span>
             </div>
           </div>
@@ -173,7 +173,7 @@ export const Footer = () => (
                 Smile Sync
               </span>
               <span className="text-[9px] font-semibold text-brand-muted uppercase tracking-widest leading-none mt-1 ml-[1px]">
-                by Aeons Lab
+                by Smile Sync
               </span>
             </div>
           </div>
@@ -233,7 +233,7 @@ export const Footer = () => (
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-brand-border/50 text-sm text-brand-muted">
-        <p>© {new Date().getFullYear()} Aeons Lab. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Smile Sync. All rights reserved.</p>
         <div className="flex items-center gap-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-white transition-colors">
             Twitter

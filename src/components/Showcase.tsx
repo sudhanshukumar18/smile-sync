@@ -116,7 +116,7 @@ const screens = [
         <div className="max-w-xs mx-auto w-full h-full bg-white flex flex-col rounded-xl overflow-hidden shadow-2xl relative rotate-[2deg] origin-bottom scale-95">
           <div className="p-4 bg-brand-bg text-white flex justify-between items-center">
             <span className="font-heading font-bold text-sm text-brand-primary">
-              AEONS
+              SMILE SYNC
             </span>
             <span className="text-xs text-brand-muted">INV-2026</span>
           </div>
@@ -187,7 +187,7 @@ export const Showcase = () => {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                   <ScreenMockup
-                    title={`aeonslab.com/app/${screen.id.toLowerCase()}`}
+                    title={`smilesync.com/app/${screen.id.toLowerCase()}`}
                   >
                     {screen.mockup}
                   </ScreenMockup>

@@ -60,7 +60,7 @@ const testimonials = [
     name: "Dr. Emily Chen",
     role: "Orthodontist, ClearAlign Clinic",
     quote:
-      "Aeons Lab changed how we operate. The billing integration is seamless, and our patients love the modern experience.",
+      "Smile Sync changed how we operate. The billing integration is seamless, and our patients love the modern experience.",
     image: "https://i.pravatar.cc/150?u=emily",
   },
   {

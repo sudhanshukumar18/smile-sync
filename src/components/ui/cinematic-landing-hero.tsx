@@ -184,13 +184,13 @@ export interface CinematicHeroProps extends React.HTMLAttributes<HTMLDivElement>
 }
 
 export function CinematicHero({
-  brandName = "Aeons Lab",
+  brandName = "Smile Sync",
   tagline1 = "Run clinical automation",
   tagline2 = "at lightspeed.",
   cardHeading = "Dentistry, rebuilt.",
   cardDescription = (
     <>
-      <span className="text-white font-semibold">Aeons Lab</span> empowers
+      <span className="text-white font-semibold">Smile Sync</span> empowers
       modern dental practices with structured workflows, powerful AI tools, and
       beautiful patient experiences.
     </>
@@ -198,7 +198,7 @@ export function CinematicHero({
   metricValue = 100,
   metricLabel = "Efficiency Score",
   ctaHeading = "Start your upgrade.",
-  ctaDescription = "Join thousands of other practices moving to Aeons Lab and take control of your time today.",
+  ctaDescription = "Join thousands of other practices moving to Smile Sync and take control of your time today.",
   className,
   ...props
 }: CinematicHeroProps) {

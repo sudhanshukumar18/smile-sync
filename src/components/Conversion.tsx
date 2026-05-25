@@ -88,7 +88,7 @@ const faqs = [
   {
     question: "Is patient data secure?",
     answer:
-      "Absolutely. Aeons Lab utilizes bank-grade 256-bit AES encryption and is fully compliant with modern healthcare data standards.",
+      "Absolutely. Smile Sync utilizes bank-grade 256-bit AES encryption and is fully compliant with modern healthcare data standards.",
   },
   {
     question: "How does the WhatsApp reminder system work?",
