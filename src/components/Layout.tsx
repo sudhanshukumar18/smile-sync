@@ -35,7 +35,7 @@ export const Navbar = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
                 Smile Sync
               </span>
               <span className="text-[9px] md:text-[10px] font-semibold text-brand-muted uppercase tracking-widest leading-none mt-1 ml-[1px]">
-                by Smile Sync
+                by AEONS LAB
               </span>
             </div>
           </div>
@@ -173,7 +173,7 @@ export const Footer = () => (
                 Smile Sync
               </span>
               <span className="text-[9px] font-semibold text-brand-muted uppercase tracking-widest leading-none mt-1 ml-[1px]">
-                by Smile Sync
+                by AEONS LAB
               </span>
             </div>
           </div>
