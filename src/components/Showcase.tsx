@@ -14,6 +14,26 @@ export const Showcase = () => {
   const springScale = useSpring(scale, springConfig);
 
   const [isDragging, setIsDragging] = useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [baseScale, setBaseScale] = useState(0.9);
+
+  React.useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width;
+        // Calculate a responsive base scale so the w-[1000px] 3D model fits with breathing room
+        const calculated = (width * 0.88) / 1000;
+        setBaseScale(Math.min(1.0, Math.max(0.32, calculated)));
+      }
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    scale.set(baseScale);
+  }, [baseScale]);
 
   const handlePointerDown = (e: React.PointerEvent) => {
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -50,18 +70,18 @@ export const Showcase = () => {
           subtitle="Explore the Smile Sync 3D architecture. Drag to rotate, zoom, and dive into specific modules below."
         />
 
-        <div className="mt-16 bg-white/[0.02] border border-brand-border/40 rounded-[2rem] p-4 md:p-8 relative overflow-hidden backdrop-blur-sm">
+        <div className="mt-16 bg-white/[0.02] border border-brand-border/40 rounded-[2rem] p-3 md:p-8 relative overflow-hidden backdrop-blur-sm">
            {/* Control Bar */}
-           <div className="absolute top-8 right-8 z-50 flex flex-col gap-2 bg-[#000]/50 p-2 rounded-xl border border-white/10 backdrop-blur-md">
+           <div className="absolute top-4 right-4 md:top-8 md:right-8 z-50 flex flex-col gap-2 bg-[#000]/70 p-2 rounded-xl border border-white/10 backdrop-blur-md">
               <button 
-                onClick={() => scale.set(Math.min(2, scale.get() + 0.2))}
+                onClick={() => scale.set(Math.min(2, scale.get() + 0.15))}
                 className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
                 title="Zoom In"
               >
                 <ZoomIn size={18} />
               </button>
               <button 
-                onClick={() => scale.set(Math.max(0.5, scale.get() - 0.2))}
+                onClick={() => scale.set(Math.max(0.25, scale.get() - 0.15))}
                 className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
                 title="Zoom Out"
               >
@@ -69,7 +89,7 @@ export const Showcase = () => {
               </button>
               <div className="w-full h-px bg-white/10 my-1" />
               <button 
-                onClick={() => { rotateX.set(25); rotateY.set(-25); scale.set(0.9); }}
+                onClick={() => { rotateX.set(25); rotateY.set(-25); scale.set(baseScale); }}
                 className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
                 title="Reset View"
               >
@@ -77,14 +97,15 @@ export const Showcase = () => {
               </button>
            </div>
            
-           <div className="absolute bottom-8 left-8 z-50 flex items-center gap-2 bg-[#000]/50 px-5 py-3 rounded-full border border-white/10 backdrop-blur-md text-brand-muted text-sm font-medium">
-             <MousePointer2 size={16} className="text-brand-primary animate-pulse" />
-             <span>Click & Drag to explore 3D canvas</span>
+           <div className="absolute bottom-4 left-4 right-4 md:right-auto md:bottom-8 md:left-8 z-50 flex items-center justify-center md:justify-start gap-2 bg-[#000]/70 px-4 py-2.5 md:px-5 md:py-3 rounded-full border border-white/10 backdrop-blur-md text-brand-muted text-xs md:text-sm font-medium">
+             <MousePointer2 size={16} className="text-brand-primary animate-pulse shrink-0" />
+             <span>Drag to rotate • Use controls to zoom</span>
            </div>
 
            {/* 3D Canvas */}
            <div 
-             className="w-full h-[600px] md:h-[700px] lg:h-[800px] cursor-grab active:cursor-grabbing flex items-center justify-center touch-none perspective-[2000px] rounded-2xl overflow-hidden"
+             ref={containerRef}
+             className="w-full h-[520px] sm:h-[600px] md:h-[700px] lg:h-[800px] cursor-grab active:cursor-grabbing flex items-center justify-center touch-none perspective-[2000px] rounded-2xl overflow-hidden"
              onPointerDown={handlePointerDown}
              onPointerUp={handlePointerUp}
              onPointerMove={handlePointerMove}
