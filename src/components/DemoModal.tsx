@@ -42,7 +42,7 @@ export const DemoModal = ({
 
               {/* Simulated Premium Video Placeholder */}
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 via-brand-bg to-brand-glow/10 transition-transform duration-[10s] group-hover:scale-105" />
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'noiseFilter\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23noiseFilter)\'/></svg>')] opacity-20 mix-blend-overlay" />
 
               <div className="relative z-10 flex flex-col items-center gap-6 text-center px-4">
                 <div className="relative">

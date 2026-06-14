@@ -261,6 +261,6 @@ export const BackgroundGlow = () => (
       className="absolute bottom-[-20%] left-[20%] w-[50%] h-[50%] rounded-full bg-brand-secondary/5 blur-[120px] animate-blob"
       style={{ animationDelay: "4s" }}
     />
-    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay"></div>
+    <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'noiseFilter\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23noiseFilter)\'/></svg>')] opacity-[0.03] mix-blend-overlay"></div>
   </div>
 );
